@@ -254,7 +254,7 @@ affinity: {}
 # -- Bitnami Redis configuration
 redis:
   # -- Enable redis
-  enabled: false
+  enabled: true
   architecture: standalone
 
   master:
@@ -278,7 +278,7 @@ externalRedis:
 # -- Bitnami PostgreSQL configuration
 postgresql:
   # -- Enable postgresql
-  enabled: false
+  enabled: true
   architecture: standalone
 
   primary:

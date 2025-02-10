@@ -157,11 +157,11 @@ worker:
 
 webhook:
   # -- Use `regular` to use main node as webhook node, or use `queue` to have webhook nodes
-  mode: regular
+  mode: queue
   # -- number of webhooks
-  count: 2
+  count: 10
   # -- Webhook url together with http schema
-  url: ""
+  url: "n8n.wardzinski.dev"
 
 workflowHistory:
   # -- Whether to save workflow history versions
@@ -173,7 +173,7 @@ workflowHistory:
 encryptionKey: ""
 
 # -- For instance, the Schedule node uses it to know at what time the workflow should start. Find you timezone from here: https://momentjs.com/timezone/
-timezone: "Europe/Berlin"
+timezone: "America/New_York"
 
 # -- A locale identifier, compatible with the Accept-Language header. n8n doesn't support regional identifiers, such as de-AT.
 defaultLocale: en
@@ -205,17 +205,17 @@ extraEnvVars: {}
 extraSecretNamesForEnvFrom: []
 
 # -- This block is for setting up the resource management for the pod more information can be found here: https://kubernetes.io/docs/concepts/configuration/manage-resources-containers/
-resources: {}
+resources:
   # We usually recommend not to specify default resources and to leave this as a conscious
   # choice for the user. This also increases chances charts run on environments with little
   # resources, such as Minikube. If you do want to specify resources, uncomment the following
   # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # limits:
-  #   cpu: 2000m
-  #   memory: 1Gi
+  requests:
+    cpu: 1000m
+    memory: 250Mi
+  limits:
+    cpu: 2000m
+    memory: 2Gi
 
 # -- This is to setup the liveness probe more information can be found here: https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-startup-probes/
 livenessProbe:

@@ -1,5 +1,12 @@
 # n8n-homelab
 
+## Baseline
+
+* Running on K3s Cluster
+* Longhorn storage backing.
+* Actual application available: https://n8n.io
+
+## Home Lab Configuration
 1. Install the chart either from remote or local to this repo.
 
     ```bash
@@ -12,7 +19,7 @@
     helm install --name n8n --namespace n8n community-charts/n8n
     ```
 
-2. Set up application using port-forward to communicate with installed instance.
+2. Set up application using port-forward to communicate with installed instance for testing.
 
     ```bash
     NAMESPACE: n8n
@@ -35,4 +42,4 @@
 
     b. After the tunnel has been created, create the Kubernetes secret that's associated with the project.
 
-    
+    c. Validate communication with the installed instance: https://n8n.wardzinski.dev

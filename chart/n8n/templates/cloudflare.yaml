@@ -12,7 +12,7 @@ data:
     no-autoupdate: true
     ingress:
     - hostname: n8n.wardzinski.dev
-      service: http://n8n:80
+      service: http://n8n:5678
     # This rule matches any traffic which didn't match a previous rule, and responds with HTTP 404.
     - service: http_status:404
 kind: ConfigMap
